@@ -65,6 +65,8 @@ In order for the experiment to work we will need to set static IP addresses for 
 | Metasploitable | 192.168.1.3 | 255.255.255.0 |
 | Windows 10 | 192.168.1.4 | 255.255.255.0 |
 
+Included below is what the overall finished network will look like once we finish the project:
+
 ![Network Topology](images/topology.jpg)
 
 Different operating systems have different methods of configuring the IP addresses of specific network adapters, especially to have persistence. Below are the commands that you would need to apply these settings:
