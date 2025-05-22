@@ -65,7 +65,7 @@ In order for the experiment to work we will need to set static IP addresses for 
 | Metasploitable | 192.168.1.3 | 255.255.255.0 |
 | Windows 10 | 192.168.1.4 | 255.255.255.0 |
 
-[Network Topology](images/topology.jpg)
+![Network Topology](images/topology.jpg)
 
 Different operating systems have different methods of configuring the IP addresses of specific network adapters, especially to have persistence. Below are the commands that you would need to apply these settings:
 
@@ -274,11 +274,11 @@ Well will be using a different tool that we havent specifically used before. Thi
 
 Sometimes this method of searching for an exploit wont work as sometimes exploits arent published or covered as extensively if the service isnt wildly used.
 
-[Googling Exploit](images/googlesearch.jpg)
+![Googling Exploit](images/googlesearch.jpg)
 
 Its useful to learn some programming languages to better understand how a script works. In the case of this script we can see theres a couple of arguements that we need to input in order to execute the script which is covered extensivly in the readme.
 
-[Viewing Script](images/script.jpg)
+![Viewing Script](images/script.jpg)
 
 We need to setup a listener to catch the reverse shell that we will be using later on. Make sure to run this in its own terminal:
 ```bash
