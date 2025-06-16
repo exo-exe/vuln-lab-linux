@@ -1,6 +1,6 @@
 # Vulnerable Lab Environment Project - Part One
 
-This multi-part project is to set up a vulnerable lab environment to conduct penetration tests against vulnerable machines, specifically Metasploitable 2 and Windows 10. This project also serves as documentation to show that I can use certain tools and techniques.
+This multi-part project is to set up a vulnerable lab environment to conduct penetration tests against vulnerable machines, specifically Metasploitable 2 and Windows Server 2008. This project also serves as documentation to show that I can use certain tools and techniques.
 
 The following topics will be covered in this project:
 
@@ -35,7 +35,6 @@ For this project, we will be using four different virtual machines. Certain mach
 | [pfSense](https://atxfiles.netgate.com/mirror/downloads/pfSense-CE-2.6.0-RELEASE-amd64.iso.gz)  | This will function as a firewall for the virtual machines.  |
 | [Kali Linux](https://www.kali.org/get-kali/#kali-virtual-machines)  | This will act as our attackers machine.  |
 | [Metasploitable](https://sourceforge.net/projects/metasploitable/)  | This will act as our primary vulnerable machine.  |
-| [Windows 10](https://www.microsoft.com/en-gb/software-download/windows10)  | This will act as our secondary vulnerable machine.  |
 
 To create a Virtual Machine in VirtualBox select -> **NEW** -> **SELECT ISO IMAGE** -> **CONFIGURE HARDWARE** -> **CONFIGURE HARD DISK**.
 
@@ -46,13 +45,13 @@ Each machine requires different amounts of RAM, Cores & Storage which are docume
 | pfSense | 1GB | 1 | 16GB |
 | Kali Linux | 4GB | 4 | 50GB |
 | Metasploitable | 512MB | 1 | 8GB |
-| Windows 10 | 8GB | 4 | 50GB |
 
 Before conducting any tests make sure to update any packages on the **Kali Linux** machine by using the following command:
 ```bash
 sudo apt update && apt upgrade -y
 ```
-
+You will also need to unzip the pfSense file before setting up that virtual machine on VirtualBox.
+If you have issues installing Metasploitable 2 on VirtualBox, please refer to [this](https://www.geeksforgeeks.org/linux-unix/how-to-install-metasploitable-2-in-virtualbox/) useful GeeksForGeeks Article.
 
 ## 📌 IP Address Configuration
 
@@ -63,7 +62,6 @@ In order for the experiment to work we will need to set static IP addresses for 
 | pfSense | 192.168.1.1 | 255.255.255.0 |
 | Kali Linux | 192.168.1.2 | 255.255.255.0 |
 | Metasploitable | 192.168.1.3 | 255.255.255.0 |
-| Windows 10 | 192.168.1.4 | 255.255.255.0 |
 
 Included below is what the overall finished network will look like once we finish the project:
 
@@ -96,11 +94,6 @@ iface eth0 inet static
   address 192.168.1.3
   netmask 255.255.255.0
   gateway 192.168.1.1
-```
-
-Windows 10:
-```bash
-Open Control Panel → Network and Internet → Network and Sharing Center → Ethernet → Properties → Internet Protocol Version 4 (TCP/IPv4) → Use the following IP address → Set IP Address
 ```
 
 You might need to restart the virtual machines or restart the network service by using the command on the Linux-based machines:
@@ -326,10 +319,10 @@ We've covered a couple of different methods that I would use to look for exploit
 
 Thank you to [@chancej715](https://github.com/chancej715) for posting your proof of concept exploit to GitHub that allows me to show how online repositories can be useful to conduct ethical penetration tests.
 
-In the next repository we will be attacking the Windows 10 machine, that we setup earlier, using some different methods to the ones talked about in this repository.
+In the next repository we will be attacking the Windows Server 2008 machine, that we setup earlier, using some different methods to the ones talked about in this repository.
 ## Authors
 
-- [@lemures-exe](https://www.github.com/lemures-exe)
+- [@exo-exe](https://www.github.com/exo-exe)
 
 
 ## License
